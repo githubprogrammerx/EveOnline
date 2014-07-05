@@ -1,8 +1,69 @@
-setwd("C:/Users/ptimusk/Dropbox/EveOnline/logs/IBMThinkCenter/logs/Gamelogs/")
+setwd("C:/Users/ptimusk/Dropbox/EveOnline/logs/Gamelogs/")
 
 file_list <- list.files()
 
-for (file in file_list){
+for (file in file_list[1:10]){
+        
+        # if the merged dataset doesn't exist, create it
+        if (!exists("dataset")){
+                dataset <- read.table(file, header=TRUE,quote="", sep="\t")
+        }
+        
+        # if the merged dataset does exist, append to it
+        if (exists("dataset")){
+                temp_dataset <-read.table(file, header=TRUE,  quote="", sep="\t")
+                dataset<-rbind(dataset, temp_dataset)
+                rm(temp_dataset)
+        }
+        
+}
+for (file in file_list[11:25000]){
+        
+        # if the merged dataset doesn't exist, create it
+        if (!exists("dataset")){
+                dataset <- read.table(file, header=TRUE,quote="", sep="\t")
+        }
+        
+        # if the merged dataset does exist, append to it
+        if (exists("dataset")){
+                temp_dataset <-read.table(file, header=TRUE,  quote="", sep="\t")
+                dataset<-rbind(dataset, temp_dataset)
+                rm(temp_dataset)
+        }
+        
+}
+
+for (file in file_list[25001:50000]){
+        
+        # if the merged dataset doesn't exist, create it
+        if (!exists("dataset")){
+                dataset <- read.table(file, header=TRUE,quote="", sep="\t")
+        }
+        
+        # if the merged dataset does exist, append to it
+        if (exists("dataset")){
+                temp_dataset <-read.table(file, header=TRUE,  quote="", sep="\t")
+                dataset<-rbind(dataset, temp_dataset)
+                rm(temp_dataset)
+        }
+        
+}
+for (file in file_list[50001:85000]){
+        
+        # if the merged dataset doesn't exist, create it
+        if (!exists("dataset")){
+                dataset <- read.table(file, header=TRUE,quote="", sep="\t")
+        }
+        
+        # if the merged dataset does exist, append to it
+        if (exists("dataset")){
+                temp_dataset <-read.table(file, header=TRUE,  quote="", sep="\t")
+                dataset<-rbind(dataset, temp_dataset)
+                rm(temp_dataset)
+        }
+        
+}
+for (file in file_list[85001:120078]){
         
         # if the merged dataset doesn't exist, create it
         if (!exists("dataset")){
